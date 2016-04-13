@@ -1,0 +1,333 @@
+@charset "utf-8";
+html,body{width:100%;height:100%;overflow:hidden; font-family: "Hiragino Sans GB W3"; color: #000}
+a {text-decoration:none;}
+/*block_1*/
+.block_1{
+	height:100%;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling:touch;
+}
+.header{
+	padding-top: 18px;
+	overflow: hidden;
+	zoom:1;
+}
+.logo{
+/*	background: url(../images/logo.png) no-repeat;*/
+	background-size: 165px auto;
+	width: 165px;
+	height: 26px;
+	float: left;
+	margin-left: 16px;
+}
+.rightTitle{
+	float: right;
+	margin: 5px 16px 0 0;
+}
+.rightTitle h2{
+	font-size: 16px;
+	color: #363636;
+	text-align: right;
+	line-height: 18px;
+}
+.rightTitle h2 span{
+	color: #0061bc;
+}
+.rightTitle p{
+	text-align: right;
+	font-size: 14px;
+	color: #535353;
+	line-height: 16px;
+}
+.indexMain{
+	width: 100%;
+	height: calc(100% - 92px);
+	position: relative;
+}
+.mainBg{
+	background-color: #ddd;
+	width: 100%;
+	height: 156px;
+	position: absolute;
+	z-index: 1;
+	top: 79px;
+}
+.banner{
+	width: 100%;
+	height: 235px;
+	background: url(../images/index_bg.png) center 5px no-repeat;
+	background-size: 320px auto;
+	position: relative;
+	z-index: 2;
+}
+.btn_1{
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	text-align: center;
+	width: 94px;
+	height: 85px;
+	position: absolute;
+	left: 50%;
+	margin-left: -44px;
+	top: 122px;
+	padding-top: 21px;
+	z-index: 3;
+}
+.words_1{
+	font-size: 14px;
+	color: #676767;
+	margin-top: 12px;
+	margin-bottom:12px;
+}
+.words_1 p{
+	line-height: 18px;
+	text-align: center;
+}
+.blcok_1 .footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 25px;
+	background: url(../images/footer_bg.png) center bottom no-repeat;
+	background-size:320px auto;
+}
+/*blcok_2*/
+.block_2{
+	display: none;
+	height:100%;
+}
+.proList{
+	height:-webkit-calc(100% - 30px);
+	height:100%;
+	-webkit-overflow-scrolling:touch;
+	overflow-y:scroll;
+	zoom:1;	
+}
+.tips{
+	width: 100%;
+	height: 25px;
+/*	background: url(../images/share_top.png) right center no-repeat #8A8A8A;*/
+	background-size: 320px;
+	position: relative;
+}
+.close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 25px;
+	width: 30px;
+}
+.planLine{
+	border-top: 1px solid #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;
+	background-color: #D3D3D3;
+	width: 100%;
+	height: 6px;
+}
+.lineCur{
+	height: 6px;
+	width: 10%;
+/*	border-top: 1px solid #8CBEC5;*/
+	background-color: #8ED1EB;
+	
+}
+.checkCon{
+	width:100%;
+	height:calc(100% - 50px);
+	/*-webkit-overflow-scrolling:touch;
+	overflow-y:scroll;
+	zoom:1;*/
+}
+.checkList{
+	width: 90%;
+	margin: 15px auto 30px;
+}
+.checkList h3{
+	color: #5c5c5c;
+	font-size: 14px;
+	font-weight: normal;
+	padding-bottom: 3px;
+}
+.checkList h3.red{
+	color:#C31010;	
+}
+.checkList dl dt{
+	font-size: 16px;
+/*	color: #0078a4;*/
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+.checkList dl dd{
+	margin-bottom: 11px;
+}
+.checkList dl dd a{
+	display: block;
+	font-size: 15px;
+	color: #000;
+	width: calc(100% - 15px);
+	padding-left: 15px;
+	height: 43px;
+	line-height: 43px;
+/*
+	background-color: #DCDCDC;
+	border-bottom: 1px solid #FAFAFA;
+*/
+	border-radius: 10px;
+}
+.checkList dl dd.cur a{
+	background-color: #8ED1EB;
+	border-bottom-color: #C9E5F0;
+}
+.btnWrap{
+	overflow:hidden;
+	zoom:1;
+	width: 100%;
+}
+.btnWrap .nextBtn{
+	float: left;
+	width: 200px;
+	height: 45px;
+	margin-left: 35px;
+	display: inline;
+	background: url(../images/next_btn.png) center center no-repeat;
+	background-size: 200px auto;
+}
+.btnWrap span{
+	float: left;
+	font: 14px/18px arial;
+	color: #000d0d;
+	margin: 30px 0 0 15px;
+	display: inline;
+}
+.block_2 .footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	background-color: #ECECEC;
+	text-align: center;
+}
+.block_2 .footer a{
+	color: #4190ad;
+	font-size: 14px;
+	line-height: 30px;
+}
+/*遮罩层*/
+.share_overmask{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.75)}
+.share_overmask.show{display:block;z-index:100}
+.share_overmask .share_arrow,.share_overmask .share_words{display:block;background-image:url(../images/share_tips.png);-webkit-background-size:308px 82px;background-size:308px 82px}
+.share_overmask .share_arrow{float:right;margin:5px 20px 0 0;width:78px;height:76px;background-position:-230px 0; cursor: pointer;}
+.share_overmask .share_words{margin:100px auto 0;width:222px;height:82px; cursor: pointer;}
+/*block_3*/
+.block_3{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #EBEBEB;
+}
+.countBg{
+	width: 115px;
+	height: 33px;
+	float: right;
+	background: url(../images/count.png) no-repeat;
+	background-size: 115px auto;
+	margin: 30px 15px 5px 0;
+}
+.showCon{
+	width: 320px;
+	height: 275px;
+	margin: 0 auto;
+	background: url(../images/body_g.png) center center no-repeat;
+	background-size: 320px auto;
+	position: relative;
+}
+.shareBtn{
+	display: block;
+	width: 186px;
+	height: 56px;
+	background: url(../images/share_btn.png) no-repeat;
+	background-size: 186px auto;
+	position: absolute;
+	left: 60px;
+	bottom:52px;
+}
+.words_2{
+	position: absolute;
+	top: 72px;
+	left: 50%;
+	font-size: 24px;
+	color: #0b0b0b;
+	line-height: 32px;
+	width: 260px;
+	margin-left: -130px;
+	text-align: center;
+}
+.words_2 p span{
+	color: #c31010;
+}
+.block_3 .footer{
+	width: 100%;
+	font-size: 14px;
+	color: #656565;
+	line-height: 18px;
+	text-align: center;
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+}
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape),
+only screen and (orientation : portrait) {
+	
+}
+/*retina 2X*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+/*	.logo{background-image: url(../images/logo@2x.png);}*/
+	.banner{background-image: url(../images/index_bg@2x.png);}
+	.blcok_1 .footer{background-image: url(../images/footer_bg@2x.png);}
+	.tips{background-image: url(../images/share_top@2x.png);}
+	.nextBtn{background-image: url(../images/nextBtn@2x.png);}
+	.countBg{background-image: url(../images/count@2x.png);}
+	.showCon{background-image: url(../images/body_g@2x.png);}
+	.shareBtn{background-image: url(../images/share_btn@2x.png);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
