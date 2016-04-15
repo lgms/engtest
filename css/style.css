@@ -1,5 +1,5 @@
 @charset "utf-8";
-html,body{width:100%;height:100%;overflow:hidden; font-family: "Hiragino Sans GB W3"; color: #000}
+html,body{width:100%;height:100%;overflow:hidden; font-family: "Times New Roman",Georgia,Serif; color: #000}
 a {text-decoration:none;}
 /*block_1*/
 .block_1{
@@ -55,7 +55,7 @@ a {text-decoration:none;}
 .banner{
 	width: 100%;
 	height: 235px;
-	background: url(../images/index_bg.png) center 5px no-repeat;
+	background: url(../images/index_bg@2x.png) center 5px no-repeat;
 	background-size: 320px auto;
 	position: relative;
 	z-index: 2;
@@ -179,7 +179,7 @@ a {text-decoration:none;}
 }
 .checkList dl dd.cur a{
 	background-color: #8ED1EB;
-	border-bottom-color: #C9E5F0;
+/*	border-bottom-color: #C9E5F0;*/
 }
 .btnWrap{
 	overflow:hidden;
@@ -192,7 +192,7 @@ a {text-decoration:none;}
 	height: 45px;
 	margin-left: 35px;
 	display: inline;
-	background: url(../images/next_btn.png) center center no-repeat;
+	background: url(../images/next_btn@2x.png) center center no-repeat;
 	background-size: 200px auto;
 }
 .btnWrap span{
@@ -233,7 +233,7 @@ a {text-decoration:none;}
 	width: 115px;
 	height: 33px;
 	float: right;
-	background: url(../images/count.png) no-repeat;
+	background: url(../images/count@2x.png) no-repeat;
 	background-size: 115px auto;
 	margin: 30px 15px 5px 0;
 }
@@ -241,7 +241,7 @@ a {text-decoration:none;}
 	width: 320px;
 	height: 275px;
 	margin: 0 auto;
-	background: url(../images/body_g.png) center center no-repeat;
+	background: url(../images/body_g@2x.png) center center no-repeat;
 	background-size: 320px auto;
 	position: relative;
 }
@@ -249,7 +249,7 @@ a {text-decoration:none;}
 	display: block;
 	width: 186px;
 	height: 56px;
-	background: url(../images/share_btn.png) no-repeat;
+	background: url(../images/share_btn@2x.png) no-repeat;
 	background-size: 186px auto;
 	position: absolute;
 	left: 60px;
@@ -288,20 +288,6 @@ only screen and (orientation : portrait) {
 	
 }
 /*retina 2X*/
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-only screen and (-moz-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-/*	.logo{background-image: url(../images/logo@2x.png);}*/
-	.banner{background-image: url(../images/index_bg@2x.png);}
-	.blcok_1 .footer{background-image: url(../images/footer_bg@2x.png);}
-	.tips{background-image: url(../images/share_top@2x.png);}
-	.nextBtn{background-image: url(../images/nextBtn@2x.png);}
-	.countBg{background-image: url(../images/count@2x.png);}
-	.showCon{background-image: url(../images/body_g@2x.png);}
-	.shareBtn{background-image: url(../images/share_btn@2x.png);}
-}
 
 
 
