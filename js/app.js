@@ -3,8 +3,9 @@ jQuery(function ($) {
         $(this).parents('.tips').hide();
     });
 
-    $('.shareBtn').on('click', function () {
-        $('.share_overmask').addClass('show');
+    $('.replayBtn').on('click', function () {
+        //        $('.share_overmask').addClass('show');
+        reset();
     });
     $('.share_overmask').on('click', function () {
         $(this).removeClass('show');
@@ -12,19 +13,33 @@ jQuery(function ($) {
 
     //开始测试按钮
     $('.btn_1').on('click', function () {
-        $(this).parents('.block_1').hide().siblings('.block_2').show();
+        getJson();
+
+    });
+
+    function start() {
+        $('.btn_1').parents('.block_1').hide().siblings('.block_2').show();
         pp_config.sort(randomsort);
         for (var i = 0; i < pp_config.length; i++) {
             pp_config[i].options.sort(randomsort);
         }
         setNext();
-    });
+    }
 
     var result_arr = [];
     var wrongs = 0;
     var curr = 0;
     var myscore = 0;
     var pp_config = [];
+
+    function reset() {
+        result_arr = [];
+        wrongs = 0;
+        curr = 0;
+        myscore = 0;
+        pp_config = [];
+        $('.block_1').show().siblings('.block_2').hide();
+    }
 
     $('.checkList').on('click', ' dl dd', function () {
         if ($(this).attr('name') == 'radio') {
@@ -80,134 +95,26 @@ jQuery(function ($) {
         //        setNext();
     });
 
-    //题库
-    pp_config = [
-        {
-            "title": "Everyone had an application form in his hand, but no one knew which office room _______.",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "to send it to"
-      },
-                {
-                    "id": "b",
-                    "text": "to send it"
-      },
-                {
-                    "id": "c",
-                    "text": "to be sent to"
-      },
-                {
-                    "id": "d",
-                    "text": "to have it send"
-      }
-    ],
-            "correct": "a",
-            "chs": "",
-            "tip": "send it to which offic room"
-  },
-        {
-            "title": "When I caught him ______ me, I stopped buying things there and started dealing with another shop.",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "to cheat"
-      },
-                {
-                    "id": "b",
-                    "text": "cheat"
-      },
-                {
-                    "id": "c",
-                    "text": "cheating"
-      },
-                {
-                    "id": "d",
-                    "text": " to be cheating"
-      }
-    ],
-            "correct": "c",
-            "chs": "",
-            "tip": "caught him cheating 发现他的欺诈行为"
-  },
-        {
-            "title": "Helen was much kinder to her youngest brother than she was to the others, ___________, of course, made the others jealous.",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "who"
-      },
-                {
-                    "id": "b",
-                    "text": "what"
-      },
-                {
-                    "id": "c",
-                    "text": "that"
-      },
-                {
-                    "id": "d",
-                    "text": "which"
-      }
-    ],
-            "correct": "d",
-            "chs": "",
-            "tip": "引导的非限定语从句，对前句补充说明"
-  },
-        {
-            "title": "“You are very selfish. It’s high time you _______ that you are not the most important person in the world,” Edgar said to his boss angrily.",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "realized"
-      },
-                {
-                    "id": "b",
-                    "text": "have realized"
-      },
-                {
-                    "id": "c",
-                    "text": "realize"
-      },
-                {
-                    "id": "d",
-                    "text": "should realize"
-      }
-    ],
-            "correct": "a",
-            "chs": "你太自私了，是时候让你明白你不是这世界上最重要的人的道理，埃德加努气冲冲地向老板讲道。",
-            "tip": "It's high time 形式主语"
-  },
-        {
-            "title": " Had he worked harder in the last semester, he _____________ the exams.",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "must have got through"
-      },
-                {
-                    "id": "b",
-                    "text": "would have got through"
-      },
-                {
-                    "id": "c",
-                    "text": "would get through"
-      },
-                {
-                    "id": "d",
-                    "text": "could get through"
-      }
-    ],
-            "correct": "b",
-            "chs": "",
-            "tip": ""
-  }
-];
+    //ajax load data
+    function getJson() {
+        $.ajax({
+            type: "GET",
+            url: "data/vocabulary.json",
+            dataType: "json",
+            success: function (data) {
+                pp_config = data
+                start();
+            }
+        });
+
+    }
+
+    
 
     //最精简的数组打乱函数
-  function randomsort(a, b) {
-        return Math.random()>.5 ? -1 : 1;//用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
-  }
+    function randomsort(a, b) {
+        return Math.random() > .5 ? -1 : 1; //用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
+    }
 
 
     //设置下一题的题目
@@ -245,7 +152,7 @@ jQuery(function ($) {
         var score = getScore();
         console.log(score)
         var ss = '<P>' + 'Your score is:</P><P><span>' + score + '</span></P>';
-       
+
         $('.result_vv').html(ss);
     }
 })
