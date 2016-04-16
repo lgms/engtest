@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    FastClick.attach(document.body);
+    
     $('.close').on('click', function () {
         $(this).parents('.tips').hide();
     });
@@ -90,9 +92,7 @@ jQuery(function ($) {
             }
 
         });
-        //result check
-
-        //        setNext();
+       
     });
 
     //ajax load data
