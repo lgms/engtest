@@ -257,6 +257,8 @@ a {
     display: inline;
 }
 
+.btnWrap a:active {background-color:#FF704D;}
+
 .block_2 .footer {
     position: fixed;
     left: 0;
