@@ -37,6 +37,7 @@ a {
 }
 
 .rightTitle {
+    font-size: 12px;
     float: right;
     margin: 5px 16px 0 0;
 }
