@@ -15,7 +15,8 @@ jQuery(function ($) {
 
     //开始测试按钮
     $('.btn_1').on('click', function () {
-        getJson();
+//        console.log($('.words_1 input:checked').val())
+        getJson($('.words_1 input:checked').val());
 
     });
 
@@ -96,10 +97,10 @@ jQuery(function ($) {
     });
 
     //ajax load data
-    function getJson() {
+    function getJson(name) {
         $.ajax({
             type: "GET",
-            url: "data/vocabulary.json",
+            url: "data/"+name+".json",
             dataType: "json",
             success: function (data) {
                 pp_config = data
@@ -155,4 +156,7 @@ jQuery(function ($) {
 
         $('.result_vv').html(ss);
     }
+    
+    
+//    $('#input-1, #input-2').iCheck({radioClass: 'iradio_square-blue',increaseArea: '20%'});
 })
