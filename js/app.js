@@ -1,6 +1,6 @@
 jQuery(function ($) {
     FastClick.attach(document.body);
-    
+
     $('.close').on('click', function () {
         $(this).parents('.tips').hide();
     });
@@ -15,7 +15,7 @@ jQuery(function ($) {
 
     //开始测试按钮
     $('.btn_1').on('click', function () {
-//        console.log($('.words_1 input:checked').val())
+        //        console.log($('.words_1 input:checked').val())
         getJson($('.words_1 input:checked').val());
 
     });
@@ -52,7 +52,7 @@ jQuery(function ($) {
             //            console.log($('.checkList dl dd a'))
             $(this).addClass('cur').siblings('dd').removeClass('cur');
 
-        } 
+        }
         /*else if ($(this).hasClass('cur') && $(this).attr('name') != 'radio') {
             $(this).removeClass('cur');
         } else {
@@ -66,7 +66,7 @@ jQuery(function ($) {
             return false;
         }
         $(".proCon dd.cur").each(function (index) {
-            console.log(pp_config[curr - 1].correct, $(this).attr('data-id'));
+//            console.log(pp_config[curr - 1].correct, $(this).attr('data-id'),wrongs,$('.checkList dl dd.cur a').css('background-color'));
             if (pp_config[curr - 1].correct == $(this).attr('data-id')) {
                 $('.checkList dl dd.cur a').css('background-color', '#8FF775');
 
@@ -81,27 +81,29 @@ jQuery(function ($) {
                 }
                 setNext();
             } else {
-                $('.checkList dl dd.cur a').css('background-color', '#FF4A4A');
-                //                console.log($('.checkList dl').parent())
-                $('.checkList dl dd').each(function () {
-                    if ($(this).attr('data-id') == pp_config[curr - 1].correct) {
-                        $(this).addClass('cur2');
-                        $(this).find('a').css('background-color', '#8FF775');
-                    }
-                });
-                wrongs++;
-                return false;
+                if ($('.checkList dl dd.cur a').css('background-color') != 'rgb(255, 74, 74)') {
+                    $('.checkList dl dd.cur a').css('background-color', '#FF4A4A');
+                    //console.log($('.checkList dl').parent())
+                    $('.checkList dl dd').each(function () {
+                        if ($(this).attr('data-id') == pp_config[curr - 1].correct) {
+                            $(this).addClass('cur2');
+                            $(this).find('a').css('background-color', '#8FF775');
+                        }
+                    });
+                    wrongs++;
+                }
+                //                return false;
             }
 
         });
-       
+
     });
 
     //ajax load data
     function getJson(name) {
         $.ajax({
             type: "GET",
-            url: "data/"+name+".json",
+            url: "data/" + name + ".json",
             dataType: "json",
             success: function (data) {
                 pp_config = data
@@ -111,7 +113,7 @@ jQuery(function ($) {
 
     }
 
-    
+
 
     //最精简的数组打乱函数
     function randomsort(a, b) {
@@ -157,7 +159,7 @@ jQuery(function ($) {
 
         $('.result_vv').html(ss);
     }
-    
-    
-//    $('#input-1, #input-2').iCheck({radioClass: 'iradio_square-blue',increaseArea: '20%'});
+
+
+    //    $('#input-1, #input-2').iCheck({radioClass: 'iradio_square-blue',increaseArea: '20%'});
 })
