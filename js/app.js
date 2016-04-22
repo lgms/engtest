@@ -48,15 +48,16 @@ jQuery(function ($) {
         if ($(this).attr('name') == 'radio') {
             //            $(this).removeClass();
             $('.checkList dl dd a').removeAttr('style');
-            $(".proCon dd").removeClass('cur');
+            $(".proCon dd").removeClass();
             //            console.log($('.checkList dl dd a'))
             $(this).addClass('cur').siblings('dd').removeClass('cur');
 
-        } else if ($(this).hasClass('cur') && $(this).attr('name') != 'radio') {
+        } 
+        /*else if ($(this).hasClass('cur') && $(this).attr('name') != 'radio') {
             $(this).removeClass('cur');
         } else {
             $(this).addClass('cur');
-        }
+        }*/
     });
 
 
@@ -84,7 +85,7 @@ jQuery(function ($) {
                 //                console.log($('.checkList dl').parent())
                 $('.checkList dl dd').each(function () {
                     if ($(this).attr('data-id') == pp_config[curr - 1].correct) {
-                        $(this).addClass('cur');
+                        $(this).addClass('cur2');
                         $(this).find('a').css('background-color', '#8FF775');
                     }
                 });
